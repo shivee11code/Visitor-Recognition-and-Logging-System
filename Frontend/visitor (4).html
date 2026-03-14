@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart IoT Doorbell — Visitor Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🔔</text></svg>">
+</head>
+<body data-page="visitor">
+  <div class="glow-blob top-right"></div>
+
+  <!-- ── HEADER ── -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="header-brand">
+        <div class="dot"></div>
+        <h2>Smart IoT <span>Doorbell</span></h2>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="avatar-btn" id="header-avatar" onclick="window.location.href='userprofile.html'" title="My Profile">👤</div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main class="page visitor-profile-wrap">
+
+    <div class="vp-header">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">← Dashboard</button>
+      <span style="font-size:11px; color:var(--muted); letter-spacing:0.12em;">VISITOR PROFILE</span>
+    </div>
+
+    <!-- Info Card -->
+    <div class="vp-card">
+      <div class="vp-photo-area">
+        <div class="vp-photo" id="vp-photo" onclick="triggerVisitorPhotoUpload()" title="Click to change photo">
+          👤
+        </div>
+        <div class="change-photo-label" onclick="triggerVisitorPhotoUpload()">CHANGE PHOTO</div>
+        <div class="vp-name" id="vp-name">Loading...</div>
+        <div style="margin:6px 0;"><span class="status-badge" id="vp-status">Unknown</span></div>
+        <div class="vp-meta" id="vp-time"></div>
+      </div>
+
+      <div class="vp-edit-row">
+        <input type="text" id="edit-name" placeholder="Edit visitor name">
+        <button class="btn btn-primary btn-sm" onclick="saveVisitor()">Save</button>
+      </div>
+
+      <input type="file" id="photo-upload" accept="image/*" onchange="previewVisitorPhoto()">
+    </div>
+
+    <!-- Voice Message Card -->
+    <div class="history-card" id="vp-voice-section">
+      <!-- Populated by loadVoiceMessageSection() -->
+    </div>
+
+    <!-- History Card -->
+    <div class="history-card">
+      <h3>📋 Visit History</h3>
+      <div class="history-timeline" id="vp-history"></div>
+    </div>
+
+    <!-- Delete -->
+    <button class="btn btn-danger btn-block" onclick="deleteVisitor()" style="margin-top:4px;">
+      🗑 Delete Visitor
+    </button>
+
+  </main>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

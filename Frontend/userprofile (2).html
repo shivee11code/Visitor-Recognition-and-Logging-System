@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart IoT Doorbell — My Profile</title>
+  <link rel="stylesheet" href="css/style.css">  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🔔</text></svg>"></head>
+<body data-page="userprofile">
+  <div class="glow-blob top-right"></div>
+
+  <!-- ── HEADER ── -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="header-brand">
+        <div class="dot"></div>
+        <h2>Smart IoT <span>Doorbell</span></h2>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="avatar-btn" id="header-avatar">👤</div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main class="page user-profile-wrap">
+
+    <div class="vp-header" style="margin-bottom:24px;">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">← Dashboard</button>
+      <span style="font-size:11px; color:var(--muted); letter-spacing:0.12em;">MY PROFILE</span>
+    </div>
+
+    <!-- Photo -->
+    <div class="up-photo-area">
+      <div class="up-photo" id="up-photo" onclick="triggerProfilePhotoUpload()" title="Click to change">👤</div>
+      <div class="up-photo-label" onclick="triggerProfilePhotoUpload()">CHANGE PHOTO</div>
+      <input type="file" id="profilePhotoInput" accept="image/*" onchange="changeProfilePhoto()">
+    </div>
+
+    <!-- Edit Info -->
+    <div class="card-section">
+      <h3>Account Details</h3>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="profileName" placeholder="Your name">
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="profilePhone" placeholder="+91 98765 43210">
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="profileEmail" placeholder="you@example.com"
+               disabled style="opacity:0.45; cursor:not-allowed;">
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="saveProfile()">
+        Save Changes
+      </button>
+    </div>
+
+    <!-- Logout -->
+    <div class="card-section">
+      <h3>Session</h3>
+      <button class="btn btn-danger btn-block" onclick="logout()">← Logout</button>
+    </div>
+
+  </main>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart IoT Doorbell — Select Profile</title>
+  <link rel="stylesheet" href="css/style.css">  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🔔</text></svg>"></head>
+<body data-page="profile">
+  <div class="glow-blob top-right"></div>
+  <div class="glow-blob bottom-left"></div>
+
+  <div class="page profiles-page">
+    <h2>Select Profile</h2>
+    <p class="subtitle">CHOOSE A PROFILE TO CONTINUE</p>
+    <div id="profiles" class="profiles-grid"></div>
+  </div>
+
+  <!-- Add Profile Modal -->
+  <div class="modal-overlay" id="add-profile-modal">
+    <div class="modal">
+      <h3>Add New Profile</h3>
+      <div class="form-group">
+        <label>Profile Name</label>
+        <input type="text" id="new-profile-name" placeholder="e.g. John Doe">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" onclick="addProfile()">Add Profile</button>
+        <button class="btn btn-secondary" onclick="closeModal('add-profile-modal')">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

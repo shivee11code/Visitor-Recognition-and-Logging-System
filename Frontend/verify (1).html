@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart IoT Doorbell — Verify Email</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🔔</text></svg>">
+</head>
+<body data-page="verify">
+  <div class="glow-blob top-right"></div>
+  <div class="glow-blob bottom-left"></div>
+
+  <div class="page auth-wrap">
+    <div class="auth-card">
+      <div class="brand">
+        <div class="brand-icon">✉️</div>
+        <h1>Verify <span>Email</span></h1>
+        <p>We sent a verification code to</p>
+      </div>
+
+      <p style="text-align:center; font-size:13px; color:var(--accent2); margin-bottom:20px; letter-spacing:0.05em;" id="verify-email">
+        your email
+      </p>
+
+      <div class="form-group">
+        <label>Verification Code</label>
+        <input type="text" id="otp" class="otp-input" placeholder="_ _ _ _"
+               maxlength="6" autocomplete="one-time-code" inputmode="numeric"
+               onkeydown="if(event.key==='Enter') verifyOTP()">
+      </div>
+
+      <div class="otp-hint">
+        Demo OTP: <strong>1234</strong>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="verifyOTP()">
+        Verify Code
+      </button>
+
+      <div class="auth-footer">
+        <a href="signup.html">← Back to Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
